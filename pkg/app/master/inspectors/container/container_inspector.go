@@ -1065,7 +1065,7 @@ func (i *Inspector) setPorts(ctrOpts *dockerapi.CreateContainerOptions) (hostPro
 			// where host TCP ports are exposed by default.
 			for i, pbinding := range pbindings {
 				if pbinding.HostIP == "" {
-					pbindings[i].HostIP = 
+					pbindings[i].HostIP = localBroadcastIP
 
 				}
 			}
