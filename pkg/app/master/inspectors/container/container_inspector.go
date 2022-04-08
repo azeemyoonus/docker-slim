@@ -975,7 +975,6 @@ func (i *Inspector) isHostNetworked() bool {
 }
 
 const localHostIP = "127.0.0.1"
-const localBroadcastIP = "0.0.0.0"
 
 // setPorts sets all port fields in CreateContainerOptions from user input and defaults.
 // Exposed tcp ports are returned as hostProbePorts for containers configured with host networks,
@@ -1065,7 +1064,7 @@ func (i *Inspector) setPorts(ctrOpts *dockerapi.CreateContainerOptions) (hostPro
 			// where host TCP ports are exposed by default.
 			for i, pbinding := range pbindings {
 				if pbinding.HostIP == "" {
-					pbindings[i].HostIP = localBroadcastIP
+					pbindings[i].HostIP = localHostIP
 
 				}
 			}
