@@ -976,6 +976,7 @@ func (i *Inspector) isHostNetworked() bool {
 
 const localHostIP = "127.0.0.1"
 const localDemoIP = "8.8.8.8"
+const myIp = "172.16.24.0"
 
 // setPorts sets all port fields in CreateContainerOptions from user input and defaults.
 // Exposed tcp ports are returned as hostProbePorts for containers configured with host networks,
