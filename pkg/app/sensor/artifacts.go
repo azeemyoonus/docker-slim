@@ -1965,7 +1965,6 @@ func isNextConfigFile(filePath string) bool {
 		return true
 	}
 
-	//TODO: read the file and verify that it's a real next config file
 	return false
 }
 
