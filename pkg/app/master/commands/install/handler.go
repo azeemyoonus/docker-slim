@@ -77,9 +77,6 @@ func symlinkBinaries(logger *log.Entry, appRootPath, symlinkRootPath string) err
 	targetSensorAppPath := filepath.Join(appRootPath, sensorAppName)
 	targetMasterAppPath := filepath.Join(appRootPath, masterAppName)
 
-	//todo:
-	//should not symlink the sensor because Docker CLI will treat it as an invalid plugin
-	//need to improve sensor bin discovery from master app symlink
 	err := os.Symlink(targetSensorAppPath, symlinkSensorAppPath)
 	if err != nil {
 		return err
